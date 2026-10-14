@@ -1,9 +1,38 @@
-# React TypeScript Starter Pack
+# React Product Catalog
 
-To use this template click `Use this template`
+A responsive product catalog built with React and TypeScript, featuring product browsing, search, sorting, pagination, favorites, and a shopping cart.
 
-### Available Scripts
+**[Live Demo](https://dimon2202.github.io/react-phone-store/)** · **[GitHub Repository](https://github.com/dimon2202/react-phone-store)**
 
-`Deploy` - available to deploy your application to gh-pages, to deploy the project, change the second line of code in package.json, specifically the homepage value, from "." to the repository name
+## Features
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+- Browse phones, tablets, and accessories.
+- Search, sort, and paginate products.
+- View product details and suggested products.
+- Add products to favorites and manage cart quantities.
+- Persist favorites and cart data using `localStorage`.
+- Navigate with React Router.
+- Interactive product sliders and responsive UI.
+
+## Tech Stack
+
+- React, TypeScript, Vite
+- React Router
+- Bulma, Sass (SCSS), CSS Modules
+- Swiper
+- Cypress, ESLint, Prettier, Stylelint
+
+## Getting Started
+
+```bash
+git clone https://github.com/dimon2202/react-phone-store.git
+cd react-phone-store
+npm install
+npm start
+```
+
+## Build
+
+```bash
+npm run build
+```
