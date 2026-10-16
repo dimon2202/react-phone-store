@@ -8,6 +8,8 @@ import { ProductDetails } from './components/ProductDetails';
 import type { Product } from '../../types/Product';
 import { CardsSlider } from '../shared/CardsSlider';
 import s from './ProductDetailsPage.module.scss';
+import { SwiperSlide } from 'swiper/react';
+import { Card } from '../shared/Card';
 
 type Params = {
   productId?: string;
@@ -76,10 +78,18 @@ export const ProductDetailsPage = () => {
             catalogProduct={catalogProduct}
           />
           <div className={s.productDetailsPage__slider}>
-            <CardsSlider
-              products={catalogProducts.sort(() => Math.random() - 0.5)}
-              name="You may also like"
-            />
+            <CardsSlider name="You may also like">
+              {catalogProducts
+                .sort(() => Math.random() - 0.5)
+                .map(product => (
+                  <SwiperSlide
+                    key={product.id}
+                    className={s.cardsSlider__slide}
+                  >
+                    <Card product={product} />
+                  </SwiperSlide>
+                ))}
+            </CardsSlider>
           </div>
         </div>
       )}

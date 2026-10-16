@@ -11,6 +11,11 @@ The application includes search, sorting, pagination, product recommendations, a
 - **[Live Demo](https://dimon2202.github.io/react-phone-store/)**
 - **[GitHub Repository](https://github.com/dimon2202/react-phone-store)**
 
+## Design
+
+The application is based on the original
+[Figma design](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0-1&t=16O9NND2RWI3jvSp-0).
+
 ## Key Features
 
 - **Product Catalog:** Browse phones, tablets, and accessories.

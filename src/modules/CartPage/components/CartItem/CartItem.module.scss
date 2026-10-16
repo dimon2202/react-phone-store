@@ -21,6 +21,7 @@
 
   &__delButton {
     all: unset;
+    cursor: pointer;
   }
 
   &__img {
@@ -42,9 +43,9 @@
     justify-content: space-between;
 
     @include on-tablet {
-    gap: 16px;
-    justify-content: space-between;
-  }
+      gap: 16px;
+      justify-content: space-between;
+    }
   }
 
   &__counter {
