@@ -78,7 +78,7 @@ export const CatalogPage = () => {
   );
 
   return (
-    <div>
+    <div className={s.catalog}>
       <Breadcrumbs type={type} />
       <h1 className={s.catalog__title}>{capitalizeFirstLetter(type)}</h1>
       <p className={s.catalog__amount}>{productsByType.length} models</p>

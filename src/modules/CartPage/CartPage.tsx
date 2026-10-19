@@ -18,6 +18,7 @@ export const CartPage = () => {
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOrderCompleted, setIsOrderCompleted] = useState(false);
 
   const type = pathname.slice(1);
 
@@ -29,12 +30,14 @@ export const CartPage = () => {
   const totalAmount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleCheckout = () => {
+    setIsOrderCompleted(false);
     setIsModalOpen(true);
   };
 
   const handleConfirmCheckout = () => {
     setCart([]);
     setIsModalOpen(false);
+    setIsOrderCompleted(true);
   };
 
   const handleCancelCheckout = () => {
@@ -43,7 +46,17 @@ export const CartPage = () => {
 
   return (
     <div className={s.cart}>
-      <Back />
+      <Back to="/" />
+
+      {isOrderCompleted && (
+        <div className={s.cart__success} role="status">
+          <h2>Order placed successfully!</h2>
+          <p>
+            Thank you for your order. This was a demo checkout, so no payment
+            was processed.
+          </p>
+        </div>
+      )}
 
       {cart.length > 0 ? (
         <>
@@ -59,7 +72,9 @@ export const CartPage = () => {
             <div className={s.cart__total}>
               <div className={s.cart__totalContent}>
                 <div className={s.cart__totalPriceAmount}>
-                  <div className={s.cart__totalPrice}>${totalPrice}</div>
+                  <div className={s.cart__totalPrice}>
+                    ${totalPrice.toFixed(2)}
+                  </div>
 
                   <div className={s.cart__totalAmount}>
                     Total for {totalAmount} items
@@ -79,16 +94,21 @@ export const CartPage = () => {
 
           <CheckoutModal
             isOpen={isModalOpen}
+            cart={cart}
+            totalPrice={totalPrice}
+            totalAmount={totalAmount}
             onConfirm={handleConfirmCheckout}
             onCancel={handleCancelCheckout}
           />
         </>
       ) : (
-        <img
-          src="./img/cart-is-empty.png"
-          className={s.cart__isEmpty}
-          alt="cart-is-empty"
-        />
+        !isOrderCompleted && (
+          <img
+            src="./img/cart-is-empty.png"
+            className={s.cart__isEmpty}
+            alt="Cart is empty"
+          />
+        )
       )}
     </div>
   );

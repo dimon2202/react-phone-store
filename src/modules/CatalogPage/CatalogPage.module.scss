@@ -2,6 +2,11 @@
 @import './../../styles/mixins';
 
 .catalog {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+
   &__title {
     margin-bottom: 8px;
 
@@ -53,6 +58,7 @@
   }
 
   &__products {
+    flex: 1;
     margin-bottom: 24px;
 
     @include on-tablet {
@@ -61,6 +67,7 @@
   }
 
   &__pagination {
+    margin-top: auto;
     margin-bottom: 64px;
 
     @include on-desktop {

@@ -71,7 +71,7 @@ export const ProductDetailsPage = () => {
             type={detailedProduct.category}
             name={detailedProduct.name}
           />
-          <Back />
+          <Back to={`/${detailedProduct.category}`} />
           <ProductDetails
             product={detailedProduct}
             searchProduct={searchProduct}

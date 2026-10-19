@@ -5,10 +5,10 @@ import { Header } from './components/Header';
 
 function App() {
   return (
-    <div className={''}>
+    <div className="app">
       <Header />
 
-      <div className="container" style={{ minHeight: '80vh' }}>
+      <div className="container">
         <Outlet />
       </div>
 

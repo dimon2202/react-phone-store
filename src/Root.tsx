@@ -6,10 +6,13 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { HomePage } from './modules/HomePage';
 import { CatalogPage } from './modules/CatalogPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+import { ScrollToTop } from './modules/shared/ScrollToTop';
 
 export const Root = () => {
   return (
     <HashRouter>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
